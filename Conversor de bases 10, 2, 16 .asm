@@ -5,7 +5,8 @@
     menu_principal db 13,10,'MENU',13,10
                    db '1. Decimal',13,10
                    db '2. Binario',13,10
-                   db '3. Hexadecimal',13,10
+                   db '3. Hexadecimal',13,10 
+                   db '4. Decimal a octal',13,10
                    db 'Seleccione opcion: $'
     
     menu_decimal   db 13,10,'DECIMAL',13,10
@@ -52,9 +53,19 @@ main proc
     cmp al, '2'
     je opcion_binario
     cmp al, '3'
-    je opcion_hexadecimal
+    je opcion_hexadecimal 
+    cmp al, '4'
+    je opcion_octal
+
     
     jmp error_y_salir
+    
+opcion_octal:
+    call leer_decimal
+    jc error_y_salir
+    call mostrar_octal
+    jmp salir
+
 
 opcion_decimal:
     call menu_conversion_decimal
@@ -278,6 +289,39 @@ error_lectura_hex:
 leer_hexadecimal endp
 
 ; CONVERSIONES 
+
+mostrar_octal proc
+    mov ah, 09h
+    mov dx, offset newline
+    int 21h
+
+    mov dx, offset decimal_msg
+    mov ah, 09h
+    int 21h
+
+    mov al, [number]
+    mov ah, 0
+    mov bx, 8       ; base 8
+    mov cx, 0
+
+convertir_octal:
+    mov dx, 0
+    div bx           ; divide AX entre 8 ? cociente en AL, residuo en DL
+    push dx          ; guarda residuo
+    inc cx
+    cmp ax, 0
+    jne convertir_octal
+
+mostrar_digitos_octal:
+    pop dx
+    add dl, '0'
+    mov ah, 02h
+    int 21h
+    loop mostrar_digitos_octal
+
+    ret
+mostrar_octal endp
+
 
 mostrar_decimal proc
     mov ah, 09h
