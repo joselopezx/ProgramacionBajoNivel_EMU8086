@@ -60,7 +60,7 @@ main_loop:
     mov ah, 00h            ; función: leer tecla
     int 16h
     cmp al, 's'            ; si presiona 's', salir
-    je fin  
+    je paro 
     cmp al, 'a'
     je izquierda
     cmp al, 'd'
@@ -108,9 +108,9 @@ derecha:
     mov bx, offset datcw
 jmp motor_ready
 
-fin:
-    ; ==========================
-    ; Salida segura del programa
-    ; ==========================
-    mov ah, 4Ch
-    int 21h                ; terminar programa
+paro:
+    mov ah, 01h
+    int 21h
+    cmp al, 's'
+    je motor_ready
+    jmp paro
