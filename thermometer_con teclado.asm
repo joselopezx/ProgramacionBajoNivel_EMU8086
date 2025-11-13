@@ -30,14 +30,17 @@ start:
 in al, 125 
 
 cmp al, 75
-je tempAlta
+jae tempAlta
+jmp tempBaja 
 
-mov ah, 01h            ; función: verificar si hay tecla
+continua:
+
+mov ah, 01h            
 int 16h
-jz ok         ; si no hay tecla, continuar con motor
-mov ah, 00h            ; función: leer tecla
+jz ok         
+mov ah, 00h            
 int 16h
-cmp al, 'w'            ; si presiona 's', salir
+cmp al, 'w'            
 je high 
 cmp al, 's'
 je low
@@ -45,7 +48,13 @@ je low
 tempAlta: 
     mov ax, 1
     out 199, ax
-jmp ok
+    out 10, ax
+jmp continua
+tempBaja: 
+    mov ax, 0
+    out 199, ax
+    out 10, ax
+jmp continua
 
 low:
 mov al, 0
