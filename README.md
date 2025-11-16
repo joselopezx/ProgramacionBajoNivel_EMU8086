@@ -2,6 +2,15 @@ Este repositorio cuenta con codigos realizados en lenguaje ensamblador utilizand
 Este emulador cuenta con diferentes herraminetas e interfaces.
 [numero h] -> hace referencia a una dirección de memoria.
 
+Registros utilizables.
+
+<img width="183" height="499" alt="image" src="https://github.com/user-attachments/assets/ba83a912-263c-471f-a117-50f5746edf83" />
+
+Memoria
+
+<img width="968" height="272" alt="image" src="https://github.com/user-attachments/assets/5f5953ed-3718-4599-b68f-5766716e0623" />
+
+
 
 Memonicos:
   MOV: Mueve datos entre direcciones, directorio->directorio, directorio->memoria, memoria->directorio, memoria->memoria
