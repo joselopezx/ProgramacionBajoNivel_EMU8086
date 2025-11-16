@@ -1,11 +1,14 @@
 Este repositorio cuenta con codigos realizados en lenguaje ensamblador utilizando EMU8086.
 Este emulador cuenta con diferentes herraminetas e interfaces.
+[numero h] -> hace referencia a una dirección de memoria.
 
-[numero h] -> hace referencia a una dirección de memoria
+
 Memonicos:
   MOV: Mueve datos entre direcciones, directorio->directorio, directorio->memoria, memoria->directorio, memoria->memoria
        su sintaxis es mov direccion a guardar, dato a guardar o direccion a tomar dato.
        mov ax, 1     mov [200h], 3      mov bl, [206h]
+
+       
 Etiquetas:
   Las etiquetas nos ayudan a hacer "bloques de codigo" que se pueden llamar de diferentes formas.
   Los puedes crear mediante un nombre segido por dos puntos ejm. ETIQUETA: (No importa si la creas con mayusculas o minusculas, 
