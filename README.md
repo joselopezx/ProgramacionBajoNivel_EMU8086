@@ -15,6 +15,6 @@ Etiquetas:
   etiqueta:, es sensible a mayusculas o minuscolas).
   Estas etiquetas creadas las puedes observar durante la ejecucuion la ruta view->simbole table
 
-  <img width="591" height="407" alt="image" src="https://github.com/user-attachments/assets/27ccd13a-b8a0-4b85-a393-48a19d2397f9" />
+  <img width="491" height="307" alt="image" src="https://github.com/user-attachments/assets/27ccd13a-b8a0-4b85-a393-48a19d2397f9" />
 
-  <img width="1231" height="396" alt="image" src="https://github.com/user-attachments/assets/0bb995ce-7e46-4294-b4e9-70ec41ccba8f" />
+  <img width="1031" height="396" alt="image" src="https://github.com/user-attachments/assets/0bb995ce-7e46-4294-b4e9-70ec41ccba8f" />
